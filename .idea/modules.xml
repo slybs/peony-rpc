@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/version01/client/client.iml" filepath="$PROJECT_DIR$/version01/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/common/common.iml" filepath="$PROJECT_DIR$/version01/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/demo/demo.iml" filepath="$PROJECT_DIR$/version01/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/demo/democlient/democlient.iml" filepath="$PROJECT_DIR$/version01/demo/democlient/democlient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/demo/demoserver/demoserver.iml" filepath="$PROJECT_DIR$/version01/demo/demoserver/demoserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/demo/demoserverapi/demoserverapi.iml" filepath="$PROJECT_DIR$/version01/demo/demoserverapi/demoserverapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/peony-rpc.iml" filepath="$PROJECT_DIR$/peony-rpc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/server/server.iml" filepath="$PROJECT_DIR$/version01/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version01/version01.iml" filepath="$PROJECT_DIR$/version01/version01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/version02/version02.iml" filepath="$PROJECT_DIR$/version02/version02.iml" />
+    </modules>
+  </component>
+</project>

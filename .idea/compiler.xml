@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client" />
+        <module name="common" />
+        <module name="democlient" />
+        <module name="demoserver" />
+        <module name="demoserverapi" />
+        <module name="server" />
+        <module name="version02" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client" target="1.5" />
+      <module name="client-core" target="1.5" />
+      <module name="common" target="1.5" />
+      <module name="demo" target="1.5" />
+      <module name="democlient" target="1.5" />
+      <module name="demoserver" target="1.5" />
+      <module name="demoserverapi" target="1.5" />
+      <module name="peony-rpc" target="1.5" />
+      <module name="server" target="1.5" />
+      <module name="version01" target="1.5" />
+      <module name="version02" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
