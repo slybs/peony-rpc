@@ -33,10 +33,7 @@ public class RpcInitConfig implements ImportBeanDefinitionRegistrar {
         for (BeanDefinition beanDefinition : beanDefinitionSet) {
             if (beanDefinition instanceof AnnotatedBeanDefinition) {
                 //获得注解上的参数信息
-                AnnotatedBeanDefinition annotatedBeanDefinition = (AnnotatedBeanDefinition) beanDefinition;
                 String beanClassAllName = beanDefinition.getBeanClassName();
-                Map<String, Object> paraMap = annotatedBeanDefinition.getMetadata()
-                        .getAnnotationAttributes(RpcClient.class.getCanonicalName());
                 //将RpcClient的工厂类注册进去
                 BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(RpcClinetFactoryBean.class);
                 //设置RpcClinetFactoryBean工厂类中的构造函数的值

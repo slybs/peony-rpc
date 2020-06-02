@@ -6,25 +6,32 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api" />
         <module name="client" />
+        <module name="clientv2" />
         <module name="common" />
         <module name="democlient" />
         <module name="demoserver" />
         <module name="demoserverapi" />
+        <module name="peonycore" />
         <module name="server" />
-        <module name="version02" />
+        <module name="serverv2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
+      <module name="api" target="1.5" />
       <module name="client" target="1.5" />
-      <module name="client-core" target="1.5" />
+      <module name="clientv2" target="8" />
       <module name="common" target="1.5" />
       <module name="demo" target="1.5" />
       <module name="democlient" target="1.5" />
       <module name="demoserver" target="1.5" />
       <module name="demoserverapi" target="1.5" />
+      <module name="demov2" target="1.5" />
       <module name="peony-rpc" target="1.5" />
+      <module name="peonycore" target="8" />
       <module name="server" target="1.5" />
+      <module name="serverv2" target="8" />
       <module name="version01" target="1.5" />
       <module name="version02" target="1.5" />
     </bytecodeTargetLevel>

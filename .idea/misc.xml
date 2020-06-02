@@ -10,6 +10,9 @@
       <set>
         <option value="$PROJECT_DIR$/version01/client-core/pom.xml" />
         <option value="$PROJECT_DIR$/version01/server-core/pom.xml" />
+        <option value="$PROJECT_DIR$/version02/commonv2/pom.xml" />
+        <option value="$PROJECT_DIR$/version02/demov2/client/pom.xml" />
+        <option value="$PROJECT_DIR$/version02/serverV2/pom.xml" />
       </set>
     </option>
   </component>
