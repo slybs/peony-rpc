@@ -1,6 +1,8 @@
 package com.lege.democlient.clientrpcconfig;
 
+import com.lege.demoserverapi.SendMessageService;
 import com.lege.peony.client.RpcConfig;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -11,5 +13,8 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import(RpcConfig.class)
 public class RpcClientConfig {
-
+    //@Bean
+    //public SendMessageService sendMessageService(){
+    //    return
+    //}
 }

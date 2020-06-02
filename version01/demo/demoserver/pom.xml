@@ -15,8 +15,6 @@
         <springboot.verson>2.1.3.RELEASE</springboot.verson>
     </properties>
 
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>
