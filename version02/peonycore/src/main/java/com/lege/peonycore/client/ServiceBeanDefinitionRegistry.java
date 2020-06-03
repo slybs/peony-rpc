@@ -27,8 +27,7 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String registerAddress = properties.getProperty("zookeeper.url");
-        String dataPath = properties.getProperty("zookeeper.register.path.prefix");
+
         String references = properties.getProperty("references");
         String[] prefixs = references.split(":");
         if( prefixs.length == 0)return;
@@ -36,22 +35,9 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
             Set<Class<?>> typesAnnotatedWith = new Reflections(prefix).getTypesAnnotatedWith(RpcClientService.class);
             for (Class beanClazz : typesAnnotatedWith) {
                 ////获得注解上的参数信息
-                //String beanClassAllName = beanClazz.getSimpleName();
-                ////将RpcClient的工厂类注册进去
-                //BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(RpcClinetFactoryBean.class);
-                ////设置RpcClinetFactoryBean工厂类中的构造函数的值
-                //builder.addConstructorArgValue(beanClassAllName);
-                //builder.getBeanDefinition().setAutowireMode(AbstractBeanDefinition.AUTOWIRE_BY_TYPE);
-                ////将其注册进容器中
-                //registry.registerBeanDefinition(beanClassAllName, builder.getBeanDefinition());
-
-
                 BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(beanClazz);
                 GenericBeanDefinition definition = (GenericBeanDefinition) builder.getRawBeanDefinition();
 
-                ServiceDiscovery serviceDiscovery = new ServiceDiscovery(registerAddress, dataPath);
-                //需要在FactoryBean的实现RpcProxy中提供serviceDiscovery属性的setter方法进行诸如操作
-                definition.getPropertyValues().addPropertyValue("serviceDiscovery", serviceDiscovery);
                 /**
                  * // 必须在这里加入泛型限定，要不然在spring下会有循环引用的问题
                  */

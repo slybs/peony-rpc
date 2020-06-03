@@ -26,19 +26,6 @@ public class ServiceRegister {
             e.printStackTrace();
         }
     }
-//    public ServiceRegister(@Value("${zookeeper.url}")String registerAddress, @Value("${zookeeper.register.path.prefix}")String dataPath) {
-//        this.dataPath = dataPath;
-//        try {
-//            zk = new ZooKeeper(registerAddress, 5000, (event) -> {
-//                if (event.getState() == Watcher.Event.KeeperState.SyncConnected) {
-//                    log.info("zookeeper建立连接");
-//                }
-//            });
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public void register(String data) {
         if (data != null) {
             byte[] bytes = data.getBytes();

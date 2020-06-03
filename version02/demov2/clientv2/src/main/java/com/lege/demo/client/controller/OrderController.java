@@ -7,17 +7,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-/**
- * @author tenglege
- * @create 2019/10/23 14:57
- * @Version 0.1
- */
-@RestController
+@RestController("/orderrestfulapi")
 public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping("/order")
+    /**
+     * http://localhost:8090/orderrestfulapi/ordertest
+     * @return
+     */
+    @RequestMapping("/ordertest")
     public String order() {
         orderService.order();
         return "success";

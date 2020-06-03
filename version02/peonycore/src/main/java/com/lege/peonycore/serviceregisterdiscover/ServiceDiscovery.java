@@ -7,6 +7,7 @@ import org.apache.zookeeper.ZooKeeper;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -19,7 +20,7 @@ public class ServiceDiscovery {
     private ZooKeeper zk;
     private String dataPath;
     private volatile List<String> dataList = new ArrayList<String>();
-
+    private CountDownLatch countDownLatch = new CountDownLatch(1);
     public ServiceDiscovery(String registerAddress, String dataPath) {
         try {
             this.registerAddress = registerAddress;
@@ -28,6 +29,7 @@ public class ServiceDiscovery {
                 if (event.getState() == Watcher.Event.KeeperState.SyncConnected) {
                     log.info("zookeeper建立连接");
                     watchNode();
+                    countDownLatch.countDown();
                 }
             });
         } catch (IOException e) {
@@ -62,6 +64,11 @@ public class ServiceDiscovery {
     }
 
     public String discover() {
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String data = null;
         int size = dataList.size();
         // 存在新节点，使用即可

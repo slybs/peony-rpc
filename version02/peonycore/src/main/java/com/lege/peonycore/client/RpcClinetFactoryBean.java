@@ -10,13 +10,13 @@ import java.lang.reflect.Proxy;
  */
 public class RpcClinetFactoryBean implements FactoryBean {
 
-    @Autowired
     private RpcDynamicPrxInvocationHandler rpcDynamicPrxInvocationHandler;
 
     private Class<?> classType;
 
     public RpcClinetFactoryBean(Class<?> classType) {
         this.classType = classType;
+        this.rpcDynamicPrxInvocationHandler = new RpcDynamicPrxInvocationHandler();
     }
 
     public Object getObject() {

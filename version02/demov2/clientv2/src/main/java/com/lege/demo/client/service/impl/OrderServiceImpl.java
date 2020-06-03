@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.reflections.Reflections;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -22,6 +23,8 @@ public class OrderServiceImpl implements OrderService {
     private PayService payService;
     @Autowired
     private DemoService demoService;
+    @Autowired
+    private ApplicationContext applicationContext;
     @Override
     public void order() {
         log.info("开启订单");
