@@ -31,6 +31,7 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
         String references = properties.getProperty("references");
         String[] prefixs = references.split(":");
         if( prefixs.length == 0)return;
+        //001.完成注解方式注入操作
         for (String prefix : prefixs) {
             Set<Class<?>> typesAnnotatedWith = new Reflections(prefix).getTypesAnnotatedWith(RpcClientService.class);
             for (Class beanClazz : typesAnnotatedWith) {
@@ -48,7 +49,8 @@ public class ServiceBeanDefinitionRegistry implements BeanDefinitionRegistryPost
                 registry.registerBeanDefinition(beanClazz.getSimpleName(), definition);
             }
         }
-
+        //TODO 002.完成xml方式注入操作
+        Thread.currentThread().getContextClassLoader();
     }
 
 //    @Override
